@@ -1,4 +1,60 @@
 ---
+// Capture the props passed from the parent component
+const { caption, bio } = Astro.props;
+---
+
+<div>
+  <button class="accordion">{caption}</button>
+  <div class="panel">
+    <p>{bio}</p>
+  </div>
+</div>
+
+<style>
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  // Wait for the DOM to load
+  document.addEventListener('DOMContentLoaded', function () {
+    var acc = document.getElementsByClassName("accordion");
+    
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    }
+  });
+</script>
+
+
+
+
+
+<!-- ---
 
 ---
 
@@ -62,4 +118,4 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-</script>
+</script> -->
