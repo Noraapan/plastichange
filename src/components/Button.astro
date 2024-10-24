@@ -3,16 +3,15 @@
 const { variant = "primary", size = "medium", href } = Astro.props;
 
 // Definér knap-styling
-const buttonStyling = "py-5 px-6 rounded-lg border-2 md transition ease-in-out uppercase";
+const buttonStyling = "py-2 px-2  border-2 md transition ease-in-out uppercase";
 const variantClasses = {
   primary: "text-white  bg-cerice_ text-poppins border-cerice_ hover:bg-white hover:text-cerice_",
   secondary: "text-white font-bold text-rubik border-graphite_light bg-graphite_light hover:bg-white hover:text-graphite_light",
-  outlined: "text-[var(--greendark)] border-[var(--orange)] hover:bg-[var(--orange)] hover:text-[var(--greendark)]",
 };
 const sizeClasses = {
   large: "text-4xl",
   medium: "text-2xl",
-  small: "text-xs",
+  small: "text-m",
 };
 ---
 
