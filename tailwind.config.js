@@ -11,6 +11,10 @@ export default {
         graphite_dark: "#1C1E23",
         pine_green: "#007C79",
       },
+      fontFamily: {
+        rubik: ["Rubik", "serif"],
+        rubik: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [],
