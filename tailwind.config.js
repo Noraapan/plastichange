@@ -13,7 +13,7 @@ export default {
       },
       fontFamily: {
         rubik: ["Rubik", "serif"],
-        rubik: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },
