@@ -1,19 +1,96 @@
 ---
-// Capture the props passed from the parent component
-const { caption, bio } = Astro.props;
+const { caption, bio, image } = Astro.props;
 ---
 
 <div>
-  <button class="accordion">{caption}</button>
-  <div class="panel">
+  
+  <button class="accordion text-4xl flex justify-between items-center border-b-2 border-black">
+    {caption}
+    <span class="icon font-extralight"></span>
+  </button>
+
+  
+  <div class="panel grid grid-cols-1 md:grid-cols-2 gap-4 items-start overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out">
     <p>{bio}</p>
+    <img src={image} alt="" class="max-w-full h-auto">
   </div>
 </div>
 
 <style>
   .accordion {
-    background-color: #eee;
-    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+ 
+  .icon::before {
+    content: "+"; 
+    display: inline-block;
+    transition: transform 0.4s ease; 
+    font-size: 4.5rem;
+  }
+
+  
+  .accordion.active .icon::before {
+    transform: rotate(45deg);
+  }
+
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+  }
+
+  
+  .panel.active {
+    max-height: 1000px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.getElementsByClassName("accordion");
+
+    for (let i = 0; i < accordions.length; i++) {
+      accordions[i].addEventListener("click", function() {
+        this.classList.toggle("active"); // Toggle active state for accordion
+        
+        const panel = this.nextElementSibling;
+        
+        // Toggle the 'active' class on the panel to control max-height
+        panel.classList.toggle("active");
+      });
+    }
+  });
+</script>
+
+
+
+<!-- ---
+const { caption, bio, image } = Astro.props;
+---
+
+<div>
+  
+  <button class="accordion text-4xl">{caption}</button>
+
+  
+  <div class="panel grid grid-cols-1 md:grid-cols-2 gap-4 items-start overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out">
+    <p>{bio}</p>
+    <img src={image} alt="" class="max-w-full h-auto">
+  </div>
+</div>
+
+<style>
+  .accordion {
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -23,9 +100,64 @@ const { caption, bio } = Astro.props;
     transition: 0.4s;
   }
 
-  .active, .accordion:hover {
-    background-color: #ccc;
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0; 
   }
+
+  
+  .panel.active {
+    max-height: 1000px; 
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.getElementsByClassName("accordion");
+
+    for (let i = 0; i < accordions.length; i++) {
+      accordions[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        
+        const panel = this.nextElementSibling;
+        
+       
+        panel.classList.toggle("active");
+      });
+    }
+  });
+</script>
+ -->
+
+<!-- fungerande accordion men inte med bild/text bredvid -->
+<!-- ---
+// Capture the props passed from the parent component
+const { caption, bio } = Astro.props;
+---
+
+<div>
+  <button class="accordion text-4xl">{caption}</button>
+  <div class="panel flex flex-col gap-4">
+    <p>{bio}</p>
+    <img src="image.png" alt="">
+  </div>
+</div>
+
+<style>
+  .accordion {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  /* .active, .accordion:hover {
+    background-color: #ccc;
+  } */
 
   .panel {
     padding: 0 18px;
@@ -50,72 +182,6 @@ const { caption, bio } = Astro.props;
   });
 </script>
 
+ -->
 
 
-
-
-<!-- ---
-
----
-
-<button class="accordion">Section 1</button>
-<div class="panel">
-  <p>Lorem ipsum...</p>
-</div>
-
-<button class="accordion">Section 2</button>
-<div class="panel">
-  <p>Lorem ipsum...</p>
-</div>
-
-<button class="accordion">Section 3</button>
-<div class="panel">
-  <p>Lorem ipsum...</p>
-</div>
-
-<style>
-    
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
-}
-</style>
-
-<script>
-    var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
-
-</script> -->
