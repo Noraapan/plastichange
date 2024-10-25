@@ -3,55 +3,81 @@ const { caption, bio, image } = Astro.props;
 ---
 
 <div>
-  
-  <button class="accordion text-4xl flex justify-between items-center border-b-2 border-black">
+  <!-- Accordion button with caption and icon -->
+  <button class="accordion text-4xl flex justify-between items-center">
     {caption}
     <span class="icon font-extralight"></span>
   </button>
 
-  
-  <div class="panel grid grid-cols-1 md:grid-cols-2 gap-4 items-start overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out">
+  <!-- Panel section for text and image -->
+  <div class="panel grid grid-cols-1 md:grid-cols-2 gap-4 items-start overflow-hidden max-h-0 transition-[max-height] ">
     <p>{bio}</p>
     <img src={image} alt="" class="max-w-full h-auto">
   </div>
+  
+  <!-- Divider for the border -->
+  <div class="border"></div>
 </div>
 
 <style>
   .accordion {
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
+    padding: 18px; /* Padding for the button */
+    width: 100%; /* Full width for button */
+    text-align: left; /* Left align text */
+    outline: none; /* Remove outline */
+    transition: 0.4s; /* Transition effect */
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
- 
+  /* Icon with '+' symbol */
   .icon::before {
     content: "+"; 
     display: inline-block;
-    transition: transform 0.4s ease; 
-    font-size: 4.5rem;
+    transition: transform 0.4s ease; /* Smooth rotation */
+    font-size: 4.5rem; /* Increase icon size */
   }
 
-  
+  /* Rotate '+' icon to 'x' when active */
   .accordion.active .icon::before {
-    transform: rotate(45deg);
+    transform: rotate(45deg); /* Rotate for active state */
   }
 
   .panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
+    padding: 0 18px; /* Padding for panel */
+    background-color: white; /* White background for the panel */
+    max-height: 0; /* Initially collapsed */
+    transition: max-height 0.4s ease; /* Transition for opening */
+    overflow: hidden; /* Hide overflow */
   }
 
-  
+  /* Expands panel with max-height */
   .panel.active {
-    max-height: 1000px;
+    max-height: 1000px; /* Arbitrary large max-height to show content */
+  }
+
+  /* Divider for the border */
+  .border {
+    height: 4px; /* Height of the border */
+    background-color: black; /* Border color */
+    transition: all 0.4s ease; /* Smooth transition */
+  }
+
+  /* Position the border under the button when inactive */
+  .accordion:not(.active) + .border {
+    margin-top: -2px; /* Adjust to align with button */
+  }
+
+  /* Position the border under the panel when active */
+  .panel.active + .border {
+    margin-top: 20px; /* Adjust to align with panel */
+  }
+
+  /* Adjust margin for panel to account for border */
+  .panel.active {
+    margin-bottom: 2px; /* Add space below panel for border */
   }
 </style>
 
@@ -60,7 +86,7 @@ const { caption, bio, image } = Astro.props;
     const accordions = document.getElementsByClassName("accordion");
 
     for (let i = 0; i < accordions.length; i++) {
-      accordions[i].addEventListener("click", function() {
+      accordions[i].addEventListener("click", function () {
         this.classList.toggle("active"); // Toggle active state for accordion
         
         const panel = this.nextElementSibling;
