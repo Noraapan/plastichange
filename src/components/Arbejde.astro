@@ -1,13 +1,88 @@
 ---
-// Capture the props passed from the parent component
 const { caption, bio, image } = Astro.props;
 ---
 
 <div>
-  <!-- Accordion button -->
+  
+  <button class="accordion text-4xl flex justify-between items-center border-b-2 border-black">
+    {caption}
+    <span class="icon font-extralight"></span>
+  </button>
+
+  
+  <div class="panel grid grid-cols-1 md:grid-cols-2 gap-4 items-start overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out">
+    <p>{bio}</p>
+    <img src={image} alt="" class="max-w-full h-auto">
+  </div>
+</div>
+
+<style>
+  .accordion {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+ 
+  .icon::before {
+    content: "+"; 
+    display: inline-block;
+    transition: transform 0.4s ease; 
+    font-size: 4.5rem;
+  }
+
+  
+  .accordion.active .icon::before {
+    transform: rotate(45deg);
+  }
+
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+  }
+
+  
+  .panel.active {
+    max-height: 1000px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.getElementsByClassName("accordion");
+
+    for (let i = 0; i < accordions.length; i++) {
+      accordions[i].addEventListener("click", function() {
+        this.classList.toggle("active"); // Toggle active state for accordion
+        
+        const panel = this.nextElementSibling;
+        
+        // Toggle the 'active' class on the panel to control max-height
+        panel.classList.toggle("active");
+      });
+    }
+  });
+</script>
+
+
+
+<!-- ---
+const { caption, bio, image } = Astro.props;
+---
+
+<div>
+  
   <button class="accordion text-4xl">{caption}</button>
 
-  <!-- Panel section with grid layout for text and image -->
+  
   <div class="panel grid grid-cols-1 md:grid-cols-2 gap-4 items-start overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out">
     <p>{bio}</p>
     <img src={image} alt="" class="max-w-full h-auto">
@@ -28,12 +103,12 @@ const { caption, bio, image } = Astro.props;
   .panel {
     padding: 0 18px;
     background-color: white;
-    max-height: 0; /* Hidden by default */
+    max-height: 0; 
   }
 
-  /* Active state for expanding the accordion */
+  
   .panel.active {
-    max-height: 1000px; /* Arbitrary large max-height to reveal content */
+    max-height: 1000px; 
   }
 </style>
 
@@ -47,13 +122,13 @@ const { caption, bio, image } = Astro.props;
         
         const panel = this.nextElementSibling;
         
-        // Toggle the 'active' class on the panel to control max-height
+       
         panel.classList.toggle("active");
       });
     }
   });
 </script>
-
+ -->
 
 <!-- fungerande accordion men inte med bild/text bredvid -->
 <!-- ---
