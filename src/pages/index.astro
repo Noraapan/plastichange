@@ -27,14 +27,13 @@ import Arbejde from '../components/Arbejde.astro';
 				<img src="pc_logo.svg" alt="bitmap" class="w-64">
 			</div>
 			<div>
-				<!-- Video on hover instead of the image -->
+				<!-- Video on hover instead of the image. poster="image.png">??? -->
 				<section id="videoonhover" x-data class="max-w-4xl mx-auto mt-32">
 					<video width="1280" height="960" x-ref="hovervideo" 
 						   @mouseenter="$refs.hovervideo.play()" 
 						   @mouseleave="$refs.hovervideo.pause()" 
-						   poster="image.png">
+						   poster="">
 						<source src="pcvideo.mp4" type="video/mp4">
-						Your browser does not support the video tag.
 					</video>
 				</section>
 			</div>
@@ -65,7 +64,7 @@ import Arbejde from '../components/Arbejde.astro';
 			</div>
 		</section>
 		<section>
-			<h2 class="flex flex-col items-center">Hvad kan du gøre?</h2>
+			<h2 class="flex flex-col items-center text-9xl">Hvad kan du gøre?</h2>
 		<article class="grid grid-cols-1 lg:grid-cols-3">
 			<div>
 					<h4 class="py-7 flex flex-col items-center">Vær med i bevægelsen</h4>
