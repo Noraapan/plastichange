@@ -12,6 +12,7 @@ import Arbejde from '../components/Arbejde.astro';
 	<section></section>
 	<article class="max-w-screen-xl mx-auto px-4">
 		
+		<!-- från noras hemsida::: -->
 		<section id="videoonhover" x-data class="max-w-4xl mx-auto mt-32">
 			<video width="1280" height="960" x-ref="hovervideo" @mouseenter="$refs.hovervideo.play()" @mouseleave="$refs.hovervideo.pause()" poster="/image.png">
 				<source src="pierre-falcke-video.mp4" type="video/mp4">
@@ -23,14 +24,22 @@ import Arbejde from '../components/Arbejde.astro';
 			<div>
 				<h2 class="text-7xl">What we want</h2>
 				<p class="w-40">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, minima ut ab iure suscipit odit non dolore aperiam voluptatem, quas laboriosam accusantium, voluptatibus ipsa ipsum. Voluptates modi alias maxime voluptatem.</p>
-			<img src="pc_logo.svg" alt="bitmap" class="w-64">
+				<img src="pc_logo.svg" alt="bitmap" class="w-64">
 			</div>
 			<div>
-				<img src="image.png" alt="bild... psyke">
-				<!--
-		<video src=""></video> -->
+				<!-- Video on hover instead of the image -->
+				<section id="videoonhover" x-data class="max-w-4xl mx-auto mt-32">
+					<video width="1280" height="960" x-ref="hovervideo" 
+						   @mouseenter="$refs.hovervideo.play()" 
+						   @mouseleave="$refs.hovervideo.pause()" 
+						   poster="image.png">
+						<source src="pcvideo.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</section>
 			</div>
 		</section>
+		
 		<section class="grid grid-cols-3 gap-12">
 	<div><img src="/image.png" alt=""><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque sed voluptatem qui accusamus similique ullam quibusdam </p></div>
 	<div><img src="/image.png" alt=""><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque sed voluptatem qui accusamus similique ullam quibusdam </p></div>
