@@ -10,13 +10,19 @@ import Arbejde from '../components/Arbejde.astro';
 	<!-- buttons; -->
 	<!-- <Button variant="primary" size="small">plastic change</Button>
 	<Button variant="secondary" size="large">plastic change</Button> -->
-	<section class="relative h-screen flex items-center justify-center">
-		<img src="hero_turt.webp" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
-		<div class="relative z-10  p-8 rounded-lg text-center text-white w-[900px]">
-			<h1 class="text-6xl pb-5">Vores verden kan ikke holde til mere unødvendig plastik.</h1>
-			<Button variant="secondary" size="large">plastic change</Button>
+	<section class="relative grid grid-cols-5 grid-rows-5 h-screen items-center justify-center">
+		<!-- Background Images -->
+		<img src="ocean1.webp" class="col-start-1 col-span-5 row-start-1 row-span-5 z-0">
+		<img src="bag.webp" class="col-start-1 col-span-5 row-start-1 row-span-5 z-10">
+		<img src="turtle1.webp" class="col-start-4 col-span-3 row-start-3 row-span-2 vibrate-3 z-5">
+	
+		<!-- Centered Text and Button -->
+		<div class="absolute inset-0 flex items-center justify-center">
+			<div class="z-20 text-center text-white">
+				<h1 class="text-6xl pb-5">Vores verden kan ikke holde til mere unødvendig plastik.</h1>
+				<Button variant="secondary" size="large">plastic change</Button>
+			</div>
 		</div>
-		
 	</section>
 	<article class="max-w-screen-xl mx-auto px-4">
 		<section class="grid grid-cols-2">
