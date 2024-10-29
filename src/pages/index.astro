@@ -7,23 +7,23 @@ import thumbsup from "../assets/images/thumbsup.png";
 import Arbejde from '../components/Arbejde.astro';
 ---
 <MainLayout title="Titel">
-	<Button variant="primary" size="small">plastic change</Button>
-	<Button variant="secondary" size="large">plastic change</Button>
-	<section></section>
-	<article class="max-w-screen-xl mx-auto px-4">
+	<!-- buttons; -->
+	<!-- <Button variant="primary" size="small">plastic change</Button>
+	<Button variant="secondary" size="large">plastic change</Button> -->
+	<section class="relative h-screen flex items-center justify-center">
+		<img src="hero_turt.webp" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
+		<div class="relative z-10  p-8 rounded-lg text-center text-white w-[900px]">
+			<h1 class="text-6xl pb-5">Vores verden kan ikke holde til mere unødvendig plastik.</h1>
+			<Button variant="secondary" size="large">plastic change</Button>
+		</div>
 		
-		<section id="videoonhover" x-data class="max-w-4xl mx-auto mt-32">
-			<video width="1280" height="960" x-ref="hovervideo" @mouseenter="$refs.hovervideo.play()" @mouseleave="$refs.hovervideo.pause()" poster="/image.png">
-				<source src="pierre-falcke-video.mp4" type="video/mp4">
-				<source src="pierre-falcke-video.webm" type="video/webm">
-			</video>
-		</section>
-
+	</section>
+	<article class="max-w-screen-xl mx-auto px-4">
 		<section class="grid grid-cols-2">
 			<div>
 				<h2 class="text-7xl">What we want</h2>
 				<p class="w-40">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, minima ut ab iure suscipit odit non dolore aperiam voluptatem, quas laboriosam accusantium, voluptatibus ipsa ipsum. Voluptates modi alias maxime voluptatem.</p>
-				<img src="pc_logo.svg" alt="bitmap" class="w-64">
+				<img src="turtl.svg" alt="bitmap" class="w-64 h-96">
 			</div>
 			<div>
 				<!-- Video on hover instead of the image. poster="image.png">??? -->
@@ -37,22 +37,12 @@ import Arbejde from '../components/Arbejde.astro';
 				</section>
 			</div>
 		</section>
-
-		<section class="my-80 mangeelementerinview grid grid-cols-3 gap-12">
-			<div class="mangeelementer1">
-				<img src="/image.png" alt="Bild 1" class="object-cover w-full h-full">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque sed voluptatem qui accusamus similique ullam quibusdam.</p>
-			</div>
-			<div class="mangeelementer2">
-				<img src="/image.png" alt="Bild 2" class="object-cover w-full h-full">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque sed voluptatem qui accusamus similique ullam quibusdam.</p>
-			</div>
-			<div class="mangeelementer3">
-				<img src="/image.png" alt="Bild 3" class="object-cover w-full h-full">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque sed voluptatem qui accusamus similique ullam quibusdam.</p>
-			</div>
-		</section>
 		
+		<section class="grid grid-cols-3 gap-12">
+	<div><img src="/image.png" alt=""><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque sed voluptatem qui accusamus similique ullam quibusdam </p></div>
+	<div><img src="/image.png" alt=""><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque sed voluptatem qui accusamus similique ullam quibusdam </p></div>
+	<div><img src="/image.png" alt=""><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque sed voluptatem qui accusamus similique ullam quibusdam </p></div>
+		</section>
 		<section>
 			<h2>Våres arbejde</h2>
 			<Arbejde class="border-b-2 border-black" caption="Mod et affaldsfrit samfund" image="image.png" bio="I 2017 blev der produceret svimlende 322 millioner tons plastik på verdensplan, og produktionen af plastik forventes at firedobles inden 2050. Samtidig vil det udledte plastikaffald til havmiljøet fordobles inden 2030. Knap 40% af den plastik, der produceres, er plastik til fødevareemballage. En stor andel heraf er engangsplastik - det vil sige plastik, der ikke kan genbruges eller genanvendes. Dens skæbne består enten af afbrænding, ophobes på åbne lossepladser, eller i værste tilfælde ender som plastikforurening i verdenshavene. Plastic Change er blandt andet sat i søen for at forhindre, at noget af dette sker." />
@@ -60,63 +50,23 @@ import Arbejde from '../components/Arbejde.astro';
 		</section>
 		<section>
 			<div class="overflow-clip"></div>
-			<h2 class="text-5xl text-center pb-8 ">Sådan opstod miljøorganisationen Plastic Change</h2>
+			<h2>Sådan opstod miljøorganisationen Plastic Change</h2>
 				<section id="horisontalscrollsection" class="h-[400vw]">
 					<ul id="horisontalliste" class="list-none pl-0 flex sticky top-[10vh]">
-						<li class="pl-5 flex w-[100vw] items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
- 						 <figure class="relative flex flex-row w-[1200px]">
- 						   <img src="/image.png" alt="" class="w-2/3" />
- 						   <figcaption class="absolute top-[355px] left-0 pl-4 p-2 w-full max-w-[800px] text-black font-bold text-[42px] leading-[44px] mix-blend-overlay">
- 						     “Plastik definerer vores kultur. Vi må ikke lade den definere vores fremtid”
- 						     (Henrik Beha Pedersen, 2014)
- 						   </figcaption>
- 						 </figure>
-							</li>	  
-						  <li class="flex w-[100vw] mb-9 items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
-							<figure class="relative flex flex-row w-[1200px]">
-							  <img src="/image.png" alt="" class="w-2/3"/>
-							  <figcaption class="absolute top-[355px] left-0 pl-4 p-2 w-full max-w-[800px] text-black font-bold text-[42px] leading-[44px] mix-blend-overlay">
-								“Plastik definerer vores kultur. Vi må ikke lade den definere vores fremtid”
-								(Henrik Beha Pedersen, 2014)
-							  </figcaption>
-							</figure>
-						  </li>
-						  <li class="flex w-[100vw] mt-9 items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
-							<figure class="relative flex flex-row w-[1200px]">
-							  <img src="/image.png" alt="" class="w-2/3"/>
-							  <figcaption class="absolute top-[355px] left-0 pl-4 p-2 w-full max-w-[800px] text-black font-bold text-[42px] leading-[44px] mix-blend-overlay">
-								“Plastik definerer vores kultur. Vi må ikke lade den definere vores fremtid”
-								(Henrik Beha Pedersen, 2014)
-							  </figcaption>
-							</figure>
-						  </li>
-						  <li class="flex w-[100vw] items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
-							<figure class="relative flex flex-row w-[1200px]">
-							  <img src="/image.png" alt="" class="w-2/3"/>
-							  <figcaption class="absolute top-[355px] left-0 pl-4 p-2 w-full max-w-[800px] text-black font-bold text-[42px] leading-[44px] mix-blend-overlay">
-								“Plastik definerer vores kultur. Vi må ikke lade den definere vores fremtid”
-								(Henrik Beha Pedersen, 2014)
-							  </figcaption>
-							</figure>
-						  </li>
-						  <li class="flex w-[100vw] mb-9 items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
-							<figure class="relative flex flex-row w-[1200px]">
-							  <img src="/image.png" alt="" class="w-2/3"/>
-							  <figcaption class="absolute top-[355px] left-0 pl-4 p-2 w-full max-w-[800px] text-black font-bold text-[42px] leading-[44px] mix-blend-overlay">
-								“Plastik definerer vores kultur. Vi må ikke lade den definere vores fremtid”
-								(Henrik Beha Pedersen, 2014)
-							  </figcaption>
-							</figure>
-						  </li>
-						  
+					<li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><figure class="flex flex-row w-[1200px]"><img src="/image.png" alt="" class="w-2/3"/><figcaption class="pl-4 italic w-1/3">Pierre Falcke, selvportræt</figcaption></figure></li>
+					<li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><figure class="flex flex-row w-[1200px]"><img src="/image.png" alt="" class="w-2/3" /><figcaption class="pl-4 italic w-1/3">Glitch kunst</figcaption></figure></li>
+					<li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><figure class="flex flex-row w-[1200px]"><img src="/image.png" alt="" class="w-2/3" /><figcaption class="pl-4 italic w-1/3">Dobbelteksponering med Smena</figcaption></figure></li>
+					<li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><figure class="flex flex-row w-[1200px]"><img src="/image.png" alt="" class="w-2/3" /><figcaption class="pl-4 italic w-1/3">Overeksponeret og ude af fokus</figcaption></figure></li>
+					<li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><figure class="flex flex-row w-[1200px]"><img src="/image.png" alt="" class="w-2/3" /><figcaption class="pl-4 italic w-1/3">Tynd film</figcaption></figure></li>
 					</ul>
 				</section>
+			</div>
 		</section>
 		<section>
-			<h2 class="flex flex-col items-center lg:text-9xl">Hvad kan du gøre?</h2>
+			<h2 class="flex flex-col items-center text-9xl">Hvad kan du gøre?</h2>
 		<article class="grid grid-cols-1 lg:grid-cols-3">
 			<div>
-					<h4 class="py-7 flex flex-col items-center lg:text-2xl">Vær med i bevægelsen</h4>
+					<h4 class="py-7 flex flex-col items-center">Vær med i bevægelsen</h4>
 					<ul class="flex flex-col items-center  lg:border-r-2 border-black" style="height: 300px;">
 						<a href=""><li class="py-5">World Cleanup day</li></a>
 						<a href=""><li class="py-5">Støt nu</li></a>
@@ -126,7 +76,7 @@ import Arbejde from '../components/Arbejde.astro';
 					</ul>
 			</div>
 			<div class="">
-				<h4 class="py-7 flex flex-col items-center lg:text-2xl">For virksomheder</h4>
+				<h4 class="py-7 flex flex-col items-center">For virksomheder</h4>
 				<ul class="flex flex-col items-center lg:border-r-2 border-black" style="height: 300px;">
 					<a href=""><li class="py-5">Workshops og rådgivning</li></a>
 					<a href=""><li class="py-5">Støt som virksomhed</li></a>
@@ -135,7 +85,7 @@ import Arbejde from '../components/Arbejde.astro';
 				</ul>
 		</div>
 		<div>
-			<h4 class="py-7 flex flex-col items-center lg:text-2xl">Hold dig opdateret</h4>
+			<h4 class="py-7 flex flex-col items-center">Hold dig opdateret</h4>
 			<ul class="flex flex-col items-center">
 				<a href=""></a><li class="py-5">Nyhedsbrev</li></a>
 				<a href=""></a><li class="py-5">Goda råd</li></a>
@@ -163,22 +113,4 @@ import Arbejde from '../components/Arbejde.astro';
 	}),
 	{ target: document.querySelector("#horisontalscrollsection") }
 	); 
-</script>  
-<!-- -->
-<script>
-	import { inView } from "motion";
-	import { animate } from 'motion';
-	
-	/* Animation för tre element */
-	inView(".mangeelementerinview", () => {
-		animate(".mangeelementer1", { x: [-1000, 0], y: [-50, 0] }, { duration: 1 });
-		animate(".mangeelementer2", { x: [-800, 0], y: [-100, 0] }, { duration: 2 });
-		animate(".mangeelementer3", { x: [800, 0], y: [50, 0] }, { duration: 2.5 });
-
-		return () => {
-			animate(".mangeelementer1", { x: [-1000, 0], y: [-50, 0] }, { duration: 1 });
-			animate(".mangeelementer2", { x: [-800, 0], y: [-100, 0] }, { duration: 2 });
-			animate(".mangeelementer3", { x: [800, 0], y: [50, 0] }, { duration: 2.5 });
-		};
-	});
 </script>
