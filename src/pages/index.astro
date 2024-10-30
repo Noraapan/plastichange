@@ -24,25 +24,42 @@ import Arbejde from '../components/Arbejde.astro';
 			</div>
 		</div>
 	</section>
-	<article id="vivill" class="max-w-screen-xl mx-auto px-4">
-		<section class="grid grid-cols-2">
+	
+	<section class="grid grid-cols-2 lg:mt-20 relative py-[500px]">
+		<div>
+			<h2 class="text-[280px] font-bold absolute top-[-100px] left-[-30px]">Hvad vi</h2>
+			<h2 class="text-[280px] font-bold absolute top-36 left-[800px]">vill</h2>
 			<div>
-				<h2 class="text-7xl">What we want</h2>
-				<p class="w-40">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, minima ut ab iure suscipit odit non dolore aperiam voluptatem, quas laboriosam accusantium, voluptatibus ipsa ipsum. Voluptates modi alias maxime voluptatem.</p>
-				<img src="turtl.svg" alt="bitmap" class="w-64 h-96">
+				<div class="w-80 text-xl absolute left-96 top-60 prose">
+					<span class="text-8xl font-bold absolute top-[55px]">L</span>
+					<div class="absolute right-0 w-[260px] top-[90px]"><p>orem, ipsum dolor sit am consectetur adipisicing.</p></div> 
+					<div class="absolute top-36"><p>Maiores, minima ut ab iure suscipit odit non dolore aperiam voluptatem, quas laboriosam accusantium, voluptatibus ipsa ipsum. Voluptates modi alias maxime voluptatem m dolor sit amet consectetur adipisicing elit. Maiores, minima ut ab iure suscipit odit non dolore aperiam voluptatem, quas laboriosam accusantium, voluptatibus ipsa ipsum. Voluptates modi a.</p></div>
+				</div>
 			</div>
-			<div>
-				<!-- Video on hover instead of the image. poster="image.png">??? -->
-				<section id="videoonhover" x-data class="max-w-4xl mx-auto mt-32">
-					<video width="1280" height="960" x-ref="hovervideo" 
-						   @mouseenter="$refs.hovervideo.play()" 
-						   @mouseleave="$refs.hovervideo.pause()" 
-						   poster="">
-						<source src="pcvideo.mp4" type="video/mp4">
-					</video>
-				</section>
-			</div>
-		</section>
+			<!-- <div>
+				<p class="w-80 text-xl absolute left-96 top-60 prose">
+					<span class="text-8xl font-bold">L</span>
+					orem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, minima ut ab iure suscipit odit non dolore aperiam voluptatem, quas laboriosam accusantium, voluptatibus ipsa ipsum. Voluptates modi alias maxime voluptatem m dolor sit amet consectetur adipisicing elit. Maiores, minima ut ab iure suscipit odit non dolore aperiam voluptatem, quas laboriosam accusantium, voluptatibus ipsa ipsum. Voluptates modi a.
+				</p>
+			</div> -->
+			
+			<!-- <img src="turtl.svg" alt="bitmap" class="w-64 h-96"> -->
+		</div>
+		<div class="max-w-[800px] absolute right-0 top-[600px]">
+			<!-- Video on hover instead of the image. poster="image.png">??? -->
+			<section id="videoonhover" x-data class="">
+				<video width="1280" height="960" x-ref="hovervideo" 
+					   @mouseenter="$refs.hovervideo.play()" 
+					   @mouseleave="$refs.hovervideo.pause()"
+					   loop 
+					   poster=""
+					   class="rounded-sm">
+					<source src="pcvideo1.mp4" type="video/mp4">
+				</video>
+			</section>
+		</div>
+	</section>
+	<article id="" class="max-w-screen-xl mx-auto px-4">
 
 		<section class="my-80 mangeelementerinview grid grid-cols-3 gap-12">
 			<div class="mangeelementer1">
