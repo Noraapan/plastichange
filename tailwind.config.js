@@ -15,6 +15,12 @@ export default {
         rubik: ["Rubik", "serif"],
         poppins: ["Poppins", "sans-serif"],
       },
+      keyframes: {
+        "infinite-scroll": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
   plugins: [],
