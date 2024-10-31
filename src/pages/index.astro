@@ -266,8 +266,12 @@ import Arbejde from '../components/Arbejde.astro';
 			  </div>
 			</form>  
 		  </section>
-</MainLayout>
-
+		  <div class="progress-bar h-4 fixed w-full bg-pine_green left-0 origin-top-left top-0 right-0"></div>
+		</MainLayout>
+<script>
+	import { animate, scroll } from 'motion';
+	scroll( animate(".progress-bar", { scaleX: [0, 1] }));
+</script>
 <!--horisontal scroll bidler -->
 <script>
 	import { animate, scroll } from 'motion';
