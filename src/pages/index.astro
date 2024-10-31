@@ -178,15 +178,18 @@ import Arbejde from '../components/Arbejde.astro';
 			  <img class="w-16" src="/elvstromsails.webp" alt="elvstrøm sails">
 			</div>
 		  </section>
-		  <section class="relative w-full h-screen">
-			<img src="oceaan.jpeg" alt="Ocean" class="w-full h-full object-cover" />
-			<img src="merch2.webp" alt="Merch 2" class=" opacity-90 absolute top-20 left-96 max-w-[300px] h-max-w-[450px]" />
-			<img src="merch1.webp" alt="Merch 1" class=" opacity-90 absolute top-64 right-96 max-w-[450px] h-max-w-[450px]" />
-			<div class="absolute top-[600px] left-[500px]">
-				<a href="https://www.hjemhavn.dk/collections/plastic-change-merchandise" target="_blank" rel="noopener noreferrer">
-				  <Button variant="secondary" size="large">Køb og Support</Button>
-				</a>
-		  </section>
+
+		  <section class="parallaxgrafik fullwidthsection relative">	
+			<div class="bg-teal-100 mt-8 h-screen w-full bg-cover bg-center grid grid-cols-12 overflow-hidden" style="background-image: url('oceanbg.jpg');">
+				<img src="turtleswim.png" alt="" class="col-start-2 col-span-4 parallaxgrafik1"></img>
+				<img src="merch2.webp" alt="Merch 2" class=" opacity-90 absolute top-36 left-96 max-w-[200px] h-max-w-[450px] z-50" />
+				<img src="merch1.webp" alt="Merch 1" class=" opacity-90 absolute top-64 right-96 max-w-[350px] h-max-w-[450px]" />
+				<div class="absolute top-[600px] left-[500px]">
+					<a href="https://www.hjemhavn.dk/collections/plastic-change-merchandise" target="_blank" rel="noopener noreferrer">
+					  <Button variant="secondary" size="large">Køb og Support</Button>
+					</a>
+				</div>
+		</section>
 		  <section id="stot" class="border gap-4 p-6 rounded-md shadow-lg">
 			<form>
 				<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
@@ -291,18 +294,13 @@ import Arbejde from '../components/Arbejde.astro';
 	});
 </script>
 
-<!-- sno delay här ifrån -->
 <script>
-	import { inView} from "motion";
-	import {animate} from "motion";
-	inView( "#stagger" , () =>{
-		animate(
-		".staggeranimation li",
-		{ opacity: [0, 1] },
-		{ 
-			delay: stagger(1, { start: 2 })
-		}
-		)
-	})
+	import { animate, scroll } from 'motion';
+scroll(animate(".parallaxgrafik1", { y: [1000, -600],
+	x:[-200, 500] }
+), {
+		target: document.querySelector(".parallaxgrafik"), offset: ["start end", "end start"]
+	});
+
 
 </script>
