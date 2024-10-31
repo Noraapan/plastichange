@@ -55,6 +55,7 @@
 * animation vibrate-3
 * ----------------------------------------
 */
+
   @-webkit-keyframes vibrate-3 {
     0% {
       -webkit-transform: translate(0);
