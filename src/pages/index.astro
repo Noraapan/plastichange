@@ -39,8 +39,9 @@ import Arbejde from '../components/Arbejde.astro';
 			</div>
 		</div>
 		<div class="max-w-[300px] md:max-w-[700px] absolute lg:right-0 top-[600px]">
-			<section id="videoonhover">
-				<video width="1280" height="960" loop 
+			<section id="videoonhover" x-data>
+				<video x-ref="hovervideo" @mouseenter="$refs.hovervideo.play()" @mouseleave="$refs.hovervideo.pause()"
+				 	width="1280" height="960" loop 
 					   poster=""
 					   class="rounded-sm w-full md:w-auto">
 					<source src="pcvideo1.mp4" type="video/mp4">
