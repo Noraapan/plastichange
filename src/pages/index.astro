@@ -7,137 +7,167 @@ import thumbsup from "../assets/images/thumbsup.png";
 import Arbejde from '../components/Arbejde.astro';
 ---
 <MainLayout title="Titel">
-	<section class="relative grid grid-cols-5 grid-rows-5 h-screen items-center justify-center">
-		
-		<img src="ocean1.webp" class="col-start-1 col-span-5 row-start-1 row-span-5 z-0">
-		<img src="bag.webp" class="col-start-1 col-span-5 row-start-1 row-span-5 z-20">
-		<img src="turtle1.webp" class="col-start-4 col-span-3 row-start-3 row-span-2 vibrate-3 z-10">
+	<section class="relative grid grid-cols-5 grid-rows-5 h-screen items-center justify-center overflow-hidden">
+		<img src="ocean1.webp" class="col-start-1 col-span-5 row-start-1 row-span-5 z-0 object-cover w-full h-full min-w-full min-h-full">
+		<img src="bag.webp" class="col-start-1 col-span-5 row-start-1 row-span-5 z-20 object-cover w-full h-full min-w-full min-h-full">
+		<img src="turtle1.webp" class="col-start-4 col-span-3 row-start-3 row-span-2 vibrate-3 z-10 hidden md:block object-cover">
 	
 		<div class="fade-in absolute inset-0 flex items-center justify-center">
-			<div class="z-20 text-center text-white">
-				<h1 class="text-6xl pb-5">Vores verden kan ikke holde til mere unødvendig plastik.</h1>
+			<div class="z-20 text-center text-white px-4 md:px-0">
+				<h1 class="text-3xl md:text-6xl pb-5">
+					Vores verden kan ikke holde til mere unødvendig plastik.
+				</h1>
 				<Button variant="secondary" size="large">plastic change</Button>
 			</div>
 		</div>
 	</section>
 	
-	<section id="vivill" class="grid grid-cols-2 lg:mt-20 relative py-[500px]">
+	
+	<section id="vivill" class="grid grid-cols-1 md:grid-cols-2 lg:mt-20 relative mt-24 py-[300px]">
 		<div>
-			<h2 class="text-[280px] font-bold absolute top-[-100px] left-[-30px]">Plast i</h2>
-			<h2 class="text-[280px] font-bold absolute top-36 left-[700px]">havet</h2>
+			<h2 class="text-[80px] md:text-[280px] font-bold absolute top-[-100px] left-[-30px]">Plastik i</h2>
+			<h2 class="text-[80px] md:text-[280px] font-bold absolute -top-[2rem] lg:top-36 left-[50px] md:left-[700px]">havet</h2>
 			<div>
-				<div class="w-80 text-xl absolute left-96 top-60 prose">
-					<span class="text-8xl font-bold absolute top-[55px] text-cerice_">P</span>
+				<div class="w-80 text-lg md:text-xl absolute left-20 md:left-96 top-0 lg:top-60 prose">
+					<span class="text-5xl md:text-8xl font-bold absolute top-[88px] lg:top-[55px] text-cerice_">P</span>
 					<div class="absolute right-0 w-[260px] top-[89px]"><p>lastikforurening er et stigende globalt problem.</p></div> 
-					<div class="absolute top-36"><p>I 2017 blev der produceret 322 millioner tons plastik globalt, og produktionen forventes at firedobles inden 2050. Plastikaffaldet i havene forventes at fordobles inden 2030. Knap 40% af plastikken er fødevareemballage, hvoraf en stor del er engangsplastik. Dette plastik ender ofte som affald på lossepladser eller som forurening i havene. Plastic Change arbejder for at forhindre dette.</p></div>
+					<div class="absolute top-36"><p>I 2017 blev der produceret 322 millioner tons plastik globalt, og produktionen forventes at firedobles inden 2050...</p></div>
 				</div>
 			</div>
-			<div class="absolute left-52 top-[800px]">
-				<img class="w-[600px]" src="info1.webp" alt="infograf">
+			<div class="absolute left-10 md:left-52 top-[300px] lg:top-[800px]">
+				<img class="w-[400px] md:w-[600px]" src="info1.webp" alt="infograf">
 			</div>
 		</div>
-		<div class="max-w-[700px] absolute right-0 top-[600px]">
-			<!-- Video on hover instead of the image. poster="image.png">??? -->
-			<section id="videoonhover" x-data class="">
-				<video width="1280" height="960" x-ref="hovervideo" 
-					   @mouseenter="$refs.hovervideo.play()" 
-					   @mouseleave="$refs.hovervideo.pause()"
-					   loop 
+		<div class="max-w-[300px] md:max-w-[700px] absolute lg:right-0 top-[600px]">
+			<section id="videoonhover">
+				<video width="1280" height="960" loop 
 					   poster=""
-					   class="rounded-sm">
+					   class="rounded-sm w-full md:w-auto">
 					<source src="pcvideo1.mp4" type="video/mp4">
 				</video>
 			</section>
 		</div>
 	</section>
-		<section class="py-60" id="skade">
-			<h2 class="text-[250px] font-bold mt-96 -mb-10 leading-[190px]">Plastikkens <span class="ml-[800px]">Skader</span></h2>
-			<div class="mangeelementerinview grid grid-cols-3 gap-12 max-w-screen-xl mx-auto">
-				<div class="mangeelementer1">
-					<img src="chem.webp" alt="Bild 1" class="object-cover h-[500px] w-full">
-					<h3 class="fade-in font-bold text-4xl text-cerice_">Havdyrene er særligt udsat</h3>
-					<p class="fade-in">
-						Plastikforurening i havene er et alvorligt problem med 8 millioner tons plastik årligt. Havdyr forveksler plastik med mad og kan kvæles. Mikroplastik spreder skadelige bakterier, og sæler drukner i fiskegarn. Fisk og muslinger optager mikroplastik, der påvirker vores fødekæde.</p>
-				</div>
-				<div class="mangeelementer2">
-					<img src="dyr.webp" alt="Bild 2" class="object-cover h-[500px] w-full">
-					<h3 class=" fade-in font-bold text-4xl text-cerice_">Plastik er fyldt med kemikalier</h3>
-					<p class="fade-in">
-						Al plastik indeholder additiver som blødgørere og flammehæmmere. Globalt produceres der over 400 millioner tons plastik årligt, og 25% af de 16.000 knyttede kemikalier er skadelige. For over 60% af de anvendte kemikalier mangler vi viden om deres effekter på miljøet og vores sundhed.</p>
-				</div>
-				<div class="mangeelementer3">
-					<img src="sund.webp" alt="Bild 3" class="object-cover h-[500px] w-full">
-					<h3 class="fade-in font-bold text-4xl text-cerice_">Mikroplastik udgør en sundhedsrisiko</h3>
-					<p class="fade-in">Ny forskning viser, at mikroplast forurener både naturen og vores kroppe. Jo mindre plastpartiklerne er, jo større en sundhedsrisiko udgør de. Studier har vist, at mikroplast kan forårsage celledød og skader på cellemembraner.</p>
-				</div>
+	<section class="py-40 lg:py-80" id="skade">
+		<h2 class="text-[80px] md:text-[250px] font-bold mt-48 md:mt-96 leading-[60px] md:leading-[190px]">Plastikkens <span class="block md:inline-block ml-0 md:ml-[800px]">Skader</span></h2>
+		<div class="mangeelementerinview grid grid-cols-1 md:grid-cols-3 gap-12 max-w-screen-xl mx-auto px-4 md:px-0">
+			<div class="mangeelementer1">
+				<img src="chem.webp" alt="Bild 1" class="object-cover h-[300px] md:h-[500px] w-full">
+				<h3 class="fade-in font-bold text-2xl md:text-4xl text-cerice_">Havdyrene er særligt udsat</h3>
+				<p class="fade-in">Plastikforurening i havene er et alvorligt problem med 8 millioner tons plastik årligt...</p>
 			</div>
-		</section>
-			<div id="uppståndelsen">
-				
-					<h2 class="text-[250px] font-bold -mb-10 leading-[210px] ml-[300px]">Hvad <br> <span class= "ml-[200px]">vi vil</span></h2>
-					<section  class="max-w-4xl mx-auto my-20" >
-						
-						<Arbejde class="border-b-2 border-black" caption="Plastikudfordringen" image="icon_world.svg" bio="Siden 1950'erne har vi produceret mere end 9 milliarder ton plastik. Heraf er størstedelen blevet brugt til engangsemballager og -produkter med kort levetid og lav markedsværdi. Disse emballager og produkter forurener i hele deres livscyklus: fra udvindingen af olie, til produktion, transport, forbrug, og når de ender til forbrænding eller i naturen. Alt dette for kun at blive brugt én gang. Indenfor de næste 20 år forventes den globale plastikproduktion at fordobles, og i samme periode forventes plastikforureningen at firedobles. Derfor skal vi have lukket for hanen med engangsplastik nu." />
-						<Arbejde class="border-b-2 border-black" caption="Vores vision" image="icon_mission.svg" bio="Vi arbejder for en verden, hvor plastik er uden negative konsekvenser for miljøet, klimaet, biodiversiteten, menneskers sundhed og fundamentale menneskerettigheder. Vi arbejder for et samfund uden engangskultur, og hvor plastik såvel som alle andre materialer bruges med respekt for klodens begrænsede ressourcer. Et samfund, hvor vi har minimeret produktionen og forbruget af plastik, udfaset brugen af skadelig kemi i plastik og stoppet plastikforurening i alle miljøer og i hele plastikkens livscyklus." />
-						<Arbejde class="border-b-2 border-black" caption="Vores strategy" image="icon_vision.svg" bio="Plastik er på mange måder blevet et symbol på det “moderne liv” og repræsenterer i sin essens det moderne samfunds forbrugerisme, bekvemmelighed og vækstparadigme. Kan vi håndtere og ændre de bagvedliggende årsager til vores stigende plastikforbrug kan vi måske samtidig finde opskriften på, hvordan vi løser andre af klodens økologiske kriser. Plastik kan med andre ord være nøglen til et paradigmeskifte, hvor ændrede økonomiske strukturer og kulturelle narrativer om kan være med til at guide os i en ny retning på andre områder. Læs hele strategien" />
-					</section>
+			<div class="mangeelementer2">
+				<img src="dyr.webp" alt="Bild 2" class="object-cover h-[300px] md:h-[500px] w-full">
+				<h3 class="fade-in font-bold text-2xl md:text-4xl text-cerice_">Plastik er fyldt med kemikalier</h3>
+				<p class="fade-in">Al plastik indeholder additiver som blødgørere og flammehæmmere...</p>
+			</div>
+			<div class="mangeelementer3">
+				<img src="sund.webp" alt="Bild 3" class="object-cover h-[300px] md:h-[500px] w-full">
+				<h3 class="fade-in font-bold text-2xl md:text-4xl text-cerice_">Mikroplastik udgør en sundhedsrisiko</h3>
+				<p class="fade-in">Ny forskning viser, at mikroplast forurener både naturen og vores kroppe...</p>
 			</div>
 		</div>
-		<section id="vad" >
+	</section>
+	<div id="uppståndelsen">
+		<h2 class="text-[80px] md:text-[250px] font-bold -mb-10 leading-[80px] md:leading-[210px] ml-[50px] md:ml-[300px]">Hvad <br> <span class="ml-20 md:ml-[200px]">vi vil</span></h2>
+		<section class="max-w-xl md:max-w-4xl mx-auto my-10 md:my-20 px-4 md:px-0">
+			<Arbejde class="border-b-2 border-black" caption="Plastikudfordringen" image="icon_world.svg" bio="Siden 1950'erne har vi produceret mere end 9 milliarder ton plastik..." />
+			<Arbejde class="border-b-2 border-black" caption="Vores vision" image="icon_mission.svg" bio="Vi arbejder for en verden, hvor plastik er uden negative konsekvenser for miljøet..." />
+			<Arbejde class="border-b-2 border-black" caption="Vores strategy" image="icon_vision.svg" bio="Plastik er på mange måder blevet et symbol på det 'moderne liv'..." />
+		</section>
+	</div>
+
+		<section id="vad" class="hidden lg:block">
 			<div class="overflow-clip"></div>
-			<h2 class="flex flex-col text-[250px] font-bold mt-96 mb-10 leading-[190px]">Hvad du<span class="ml-[300px]">kan gøre</span></h2>
-				<section id="horisontalscrollsection" class="h-[100vw]">
-					<ul id="horisontalliste" class="list-none pl-0 flex sticky top-[10vh]">
-						<li class="pl-5 flex w-[100vw] items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
- 						 <figure class="relative flex flex-row justify-centerw-[1200px]">
- 						   <img src="/singlesuck.png" alt="turtle" class="w-2/3" />
+			<h2 class="flex flex-col text-[80px] lg:text-[250px] font-bold mt-96 mb-10 lg:leading-[190px]">
+				Hvad du<span class="ml-[80px] lg:ml-[300px]">kan gøre</span>
+			</h2>
+			<section id="horisontalscrollsection" class="h-[100vw]">
+				<ul id="horisontalliste" class="list-none pl-0 flex sticky top-[10vh]">
+					<li class="pl-5 flex w-[100vw] items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
+						<figure class="relative flex flex-row justify-center w-[1200px]">
+							<img src="/singlesuck.png" alt="turtle" class="w-2/3" />
 							<div class="pl-10 pt-20">
-								<p class=" text-cerice_ font-bold text-[42px] leading-[55px]">Sammen kan vi stoppe plastikforurening.</p>
+								<p class="text-cerice_ font-bold text-[42px] leading-[55px]">Sammen kan vi stoppe plastikforurening.</p>
 								<p class="text-lg ml-2 text-black font-normal">Din støtte er afgørende!</p>
 								<div class="ml-72 pt-12"><Button variant="heart" size="small">støt</Button></div>
 							</div>
- 						 </figure>
-							</li>	  
-						  <li class="flex w-[100vw] pl-28 mb-9 items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
-							<figure class="relative flex flex-row w-[1200px]">
-							  <img src="/turtle1.webp" alt="" class=""/>
-							  <figcaption class="absolute top-[365px] left-0 w-full max-w-[900px] text-cerice_ font-bold text-[42px] leading-[55px] mix-blend-overlay">
+						</figure>
+					</li>
+					<li class="flex w-[100vw] pl-28 mb-9 items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
+						<figure class="relative flex flex-row w-[1200px]">
+							<img src="/turtle1.webp" alt="" class="" />
+							<figcaption class="absolute top-[365px] left-0 w-full max-w-[900px] text-cerice_ font-bold text-[42px] leading-[55px] mix-blend-overlay">
 								Vær kritisk. <p class="text-lg text-black font-normal w-80">Få ekspertviden og løsninger til hele værdikæden i den cirkulære plastøkonomi.</p>
-								</figcaption>
-							</figure>
-						  </li>
-						  <li class="flex w-[100vw] mb-12 items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
-							<figure class="relative flex flex-row w-[1200px]">
-							  <img src="/reduce.png" alt="reduce reuse recycle" class="max-w-[600px]">
+							</figcaption>
+						</figure>
+					</li>
+					<li class="flex w-[100vw] mb-12 items-start justify-center flex-col flex-grow-0 flex-shrink-0 flex-auto">
+						<figure class="relative flex flex-row w-[1200px]">
+							<img src="/reduce.png" alt="reduce reuse recycle" class="max-w-[600px]">
 							<div>
 								<a href="https://www.instagram.com/explore/tags/singleusesucks/" class="text-cerice_ text-xl hover:text-cerice_/75">#singleusesucks</a>
 							</div>
-							</figure> 
-						  </li>
-						  <li class="flex w-full items-start justify-center flex-col flex-grow-0 flex-shrink-0">
-							<figure class="relative flex flex-row w-full justify-left">
-							  <div class="w-full max-w-3xl">
+						</figure>
+					</li>
+					<li class="flex w-full items-start justify-center flex-col flex-grow-0 flex-shrink-0">
+						<figure class="relative flex flex-row w-full justify-left">
+							<div class="w-full max-w-3xl">
 								<iframe
-								  class="w-full aspect-video rounded-lg shadow-lg"
-								  src="https://www.youtube.com/embed/wvR6OB-4YX8?start=1"
-								  title="YouTube video player"
-								  frameborder="0"
-								  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								  allowfullscreen
+									class="w-full aspect-video rounded-lg shadow-lg"
+									src="https://www.youtube.com/embed/wvR6OB-4YX8?start=1"
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen
 								></iframe>
-							  </div>
-							 <div class="max-w-60 pl-10">
-							 	 <h4 class="font-bold pb-4 text-[60px]">Engager dig!</h4>
-								  <p>Alle kan gøre en forskel for plastik-sagen, uanset om det er ved at samle affald, skabe opmærksomhed eller støtte lokalt. Hver indsats tæller!</p>
-							 </div>
-							  <figcaption class="absolute pr-44 bottom-[398px] left-0 w-full max-w-[900px] text-black font-bold text-[42px] leading-[45px] mix-blend-overlay">
+							</div>
+							<div class="max-w-60 pl-10">
+								<h4 class="font-bold pb-4 text-[60px]">Engager dig!</h4>
+								<p>Alle kan gøre en forskel for plastik-sagen, uanset om det er ved at samle affald, skabe opmærksomhed eller støtte lokalt. Hver indsats tæller!</p>
+							</div>
+							<figcaption class="absolute pr-44 bottom-[398px] left-0 w-full max-w-[900px] text-black font-bold text-[42px] leading-[45px] mix-blend-overlay">
 								Alle kan gøre noget, men ingen kan gøre alt.
-							  </figcaption>
-							</figure>
-						  </li>
-					</ul>
-				</section>
+							</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</section>
 		</section>
+		
+		<section id="vad-small" class="block lg:hidden">
+			<div class="overflow-clip"></div>
+			<h2 class="text-[50px] font-bold mt-20 mb-5">Hvad du kan gøre</h2>
+			<ul class="list-none pl-0">
+				<li class="flex flex-col items-center mb-12">
+					<img src="/singlesuck.png" alt="turtle" class="w-full max-w-[300px] mb-2" />
+					<p class="text-cerice_ font-bold text-[20px] leading-[30px]">Sammen kan vi stoppe plastikforurening.</p>
+				</li>
+				<li class="flex flex-col items-center mb-12">
+					<img src="/turtle1.webp" alt="" class="w-full max-w-[300px] mb-2" />
+					<p class="text-cerice_ font-bold text-[20px] leading-[30px]">Vær kritisk. Få ekspertviden og løsninger til hele værdikæden i den cirkulære plastøkonomi.</p>
+				</li>
+				<li class="flex flex-col items-center mb-12">
+					<img src="/reduce.png" alt="reduce reuse recycle" class="w-full max-w-[300px] mb-2" />
+					<p class="text-cerice_ font-bold text-[20px] leading-[30px]">#singleusesucks</p>
+				</li>
+				<li class="flex flex-col items-center mb-12">
+					<div class="w-full max-w-3xl mb-4">
+						<iframe
+							class="w-full aspect-video rounded-lg shadow-lg"
+							src="https://www.youtube.com/embed/wvR6OB-4YX8?start=1"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+					</div>
+					<h4 class="font-bold text-[40px] mb-2">Engager dig!</h4>
+					<p>Alle kan gøre en forskel for plastik-sagen, uanset om det er ved at samle affald, skabe opmærksomhed eller støtte lokalt. Hver indsats tæller!</p>
+				</li>
+			</ul>
+		</section>
+		
 		<section class="overflow-hidden flex">
 			<div class="flex animate-infinite-scroll whitespace-nowrap gap-[660px]">
 			  <img class="w-16" src="/rema1000.webp" alt="rema1000">
@@ -187,9 +217,9 @@ import Arbejde from '../components/Arbejde.astro';
 		  <section class="parallaxgrafik fullwidthsection relative" id="merch">	
 			<div class="bg-teal-100 mt-8 h-screen w-full bg-cover bg-center grid grid-cols-12 overflow-hidden" style="background-image: url('oceanbg.jpg');">
 				<img src="turtleswim.png" alt="" class="col-start-2 col-span-4 parallaxgrafik1"></img>
-				<img src="merch2.webp" alt="Merch 2" class=" opacity-90 absolute top-36 left-96 max-w-[200px] h-max-w-[450px] z-50" />
-				<img src="merch1.webp" alt="Merch 1" class=" opacity-90 absolute top-64 right-96 max-w-[350px] h-max-w-[450px]" />
-				<div class="absolute top-[600px] left-[500px]">
+				<img src="merch2.webp" alt="Merch 2" class=" opacity-90 absolute left-20 top-20 lg:top-36 lg:left-96 max-w-[200px] h-max-w-[450px] z-50" />
+				<img src="merch1.webp" alt="Merch 1" class=" opacity-90 absolute top-60 lg:top-64 lg:right-96 max-w-[350px] h-max-w-[450px]" />
+				<div class="absolute top-[600px] lg:left-[500px]">
 					<a href="https://www.hjemhavn.dk/collections/plastic-change-merchandise" target="_blank" rel="noopener noreferrer">
 					  <Button variant="secondary" size="large">Køb og Support</Button>
 					</a>
@@ -198,7 +228,7 @@ import Arbejde from '../components/Arbejde.astro';
 		</section>
 		  <section id="stot" class=" gap-4 p-6 rounded-md shadow-lg -mt-28 z-10 relative lg:grid grid-cols-2">
 			 <div id="stot">
-			 	 <form action="" class="bg-white rounded-lg w-[530px] h-[530px] p-6 shadow-lg">
+			 	 <form action="" class="bg-white rounded-lg lg:w-[530px] lg:h-[530px] p-6 shadow-lg">
 					<div class="p-12">
 						<h3 class="text-left text-lg font-semibold mb-4 text-cerice_">Støt os her</h3>
 					  
@@ -248,7 +278,7 @@ import Arbejde from '../components/Arbejde.astro';
 			 </div>
 		  </section>
 		  <section id="nyhedsbrev" class="bg-cerice_ text-center py-10">
-			<form name="newsletter" method="POST" data-netlify="true" class="max-w-lg mx-auto">
+			<form name="newsletter" method="POST" data-netlify="true" class="lg:max-w-lg max-w-sm mx-auto">
 			  <div class="container mb-6">
 				<h2 class="text-[42px] font-bold text-white text-center mb-2">Tilmeld våres nyhedsbrev</h2>
 				<p class="text-lg text-center">Vær med til at støtte udviklingen af vores miljøarbejde - tilmeld dig vores nyhedsbrev og hold dig opdateret!</p>
