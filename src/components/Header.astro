@@ -10,9 +10,6 @@ import Button from '../components/Button.astro';
         </div>
         <Button variant="heart" size="small">støt</Button>
         <div class="class="x-on:click=" showmenu = !showmenu"><Button variant="primary" size="small">Menu</Button></div>
-       <!-- <button id="burgermenu" class="text-xs py-4 px-4 rounded-md border-2 transition ease-in-out text-white font-semibold text-poppins tracking-tight border-graphite_light bg-graphite_light hover:bg-white hover:text-graphite_light" x-on:click="showmenu = !showmenu"> 
-            Menu
-        </button> -->
     </div>
         <nav id="mobilmenu" class="fixed right-8 flex flex-col content-center pt-2" 
             x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
