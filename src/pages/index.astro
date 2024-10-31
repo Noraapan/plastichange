@@ -50,7 +50,7 @@ import Arbejde from '../components/Arbejde.astro';
 			</section>
 		</div>
 	</section>
-		<section class="py-60">
+		<section class="py-60" id="skade">
 			<h2 class="text-[250px] font-bold mt-96 -mb-10 leading-[190px]">Plastikkens <span class="ml-[800px]">Skader</span></h2>
 			<div class="mangeelementerinview grid grid-cols-3 gap-12 max-w-screen-xl mx-auto">
 				<div class="mangeelementer1">
@@ -72,16 +72,18 @@ import Arbejde from '../components/Arbejde.astro';
 				</div>
 			</div>
 		</section>
-			
-				<h2 class="text-[250px] font-bold -mb-10 leading-[210px] ml-[300px]">Hvad <br> <span class= "ml-[200px]">vi vil</span></h2>
-				<section id="omos" class="max-w-4xl mx-auto my-20" >
-					
-					<Arbejde class="border-b-2 border-black" caption="Plastikudfordringen" image="icon_world.svg" bio="Siden 1950'erne har vi produceret mere end 9 milliarder ton plastik. Heraf er størstedelen blevet brugt til engangsemballager og -produkter med kort levetid og lav markedsværdi. Disse emballager og produkter forurener i hele deres livscyklus: fra udvindingen af olie, til produktion, transport, forbrug, og når de ender til forbrænding eller i naturen. Alt dette for kun at blive brugt én gang. Indenfor de næste 20 år forventes den globale plastikproduktion at fordobles, og i samme periode forventes plastikforureningen at firedobles. Derfor skal vi have lukket for hanen med engangsplastik nu." />
-					<Arbejde class="border-b-2 border-black" caption="Vores vision" image="icon_mission.svg" bio="Vi arbejder for en verden, hvor plastik er uden negative konsekvenser for miljøet, klimaet, biodiversiteten, menneskers sundhed og fundamentale menneskerettigheder. Vi arbejder for et samfund uden engangskultur, og hvor plastik såvel som alle andre materialer bruges med respekt for klodens begrænsede ressourcer. Et samfund, hvor vi har minimeret produktionen og forbruget af plastik, udfaset brugen af skadelig kemi i plastik og stoppet plastikforurening i alle miljøer og i hele plastikkens livscyklus." />
-					<Arbejde class="border-b-2 border-black" caption="Vores strategy" image="icon_vision.svg" bio="Plastik er på mange måder blevet et symbol på det “moderne liv” og repræsenterer i sin essens det moderne samfunds forbrugerisme, bekvemmelighed og vækstparadigme. Kan vi håndtere og ændre de bagvedliggende årsager til vores stigende plastikforbrug kan vi måske samtidig finde opskriften på, hvordan vi løser andre af klodens økologiske kriser. Plastik kan med andre ord være nøglen til et paradigmeskifte, hvor ændrede økonomiske strukturer og kulturelle narrativer om kan være med til at guide os i en ny retning på andre områder. Læs hele strategien" />
-				</section>
+			<div id="uppståndelsen">
+				
+					<h2 class="text-[250px] font-bold -mb-10 leading-[210px] ml-[300px]">Hvad <br> <span class= "ml-[200px]">vi vil</span></h2>
+					<section  class="max-w-4xl mx-auto my-20" >
+						
+						<Arbejde class="border-b-2 border-black" caption="Plastikudfordringen" image="icon_world.svg" bio="Siden 1950'erne har vi produceret mere end 9 milliarder ton plastik. Heraf er størstedelen blevet brugt til engangsemballager og -produkter med kort levetid og lav markedsværdi. Disse emballager og produkter forurener i hele deres livscyklus: fra udvindingen af olie, til produktion, transport, forbrug, og når de ender til forbrænding eller i naturen. Alt dette for kun at blive brugt én gang. Indenfor de næste 20 år forventes den globale plastikproduktion at fordobles, og i samme periode forventes plastikforureningen at firedobles. Derfor skal vi have lukket for hanen med engangsplastik nu." />
+						<Arbejde class="border-b-2 border-black" caption="Vores vision" image="icon_mission.svg" bio="Vi arbejder for en verden, hvor plastik er uden negative konsekvenser for miljøet, klimaet, biodiversiteten, menneskers sundhed og fundamentale menneskerettigheder. Vi arbejder for et samfund uden engangskultur, og hvor plastik såvel som alle andre materialer bruges med respekt for klodens begrænsede ressourcer. Et samfund, hvor vi har minimeret produktionen og forbruget af plastik, udfaset brugen af skadelig kemi i plastik og stoppet plastikforurening i alle miljøer og i hele plastikkens livscyklus." />
+						<Arbejde class="border-b-2 border-black" caption="Vores strategy" image="icon_vision.svg" bio="Plastik er på mange måder blevet et symbol på det “moderne liv” og repræsenterer i sin essens det moderne samfunds forbrugerisme, bekvemmelighed og vækstparadigme. Kan vi håndtere og ændre de bagvedliggende årsager til vores stigende plastikforbrug kan vi måske samtidig finde opskriften på, hvordan vi løser andre af klodens økologiske kriser. Plastik kan med andre ord være nøglen til et paradigmeskifte, hvor ændrede økonomiske strukturer og kulturelle narrativer om kan være med til at guide os i en ny retning på andre områder. Læs hele strategien" />
+					</section>
+			</div>
 		</div>
-		<section id="uppståndelsen">
+		<section id="vad" >
 			<div class="overflow-clip"></div>
 			<h2 class="flex flex-col text-[250px] font-bold mt-96 mb-10 leading-[190px]">Hvad du<span class="ml-[300px]">kan gøre</span></h2>
 				<section id="horisontalscrollsection" class="h-[100vw]">
@@ -182,7 +184,7 @@ import Arbejde from '../components/Arbejde.astro';
 			</div>
 		  </section>
 
-		  <section class="parallaxgrafik fullwidthsection relative">	
+		  <section class="parallaxgrafik fullwidthsection relative" id="merch">	
 			<div class="bg-teal-100 mt-8 h-screen w-full bg-cover bg-center grid grid-cols-12 overflow-hidden" style="background-image: url('oceanbg.jpg');">
 				<img src="turtleswim.png" alt="" class="col-start-2 col-span-4 parallaxgrafik1"></img>
 				<img src="merch2.webp" alt="Merch 2" class=" opacity-90 absolute top-36 left-96 max-w-[200px] h-max-w-[450px] z-50" />
